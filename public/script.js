@@ -33,24 +33,22 @@ function createMentorCard(name) {
       const newStatus = isNowOccupied ? "Occupied" : "Free";
       button.innerText = newStatus;
 
-      // Send update to server
-      fetch("/api/mentors/update", {
+      fetch("/toggle", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          mentor: name,
-          slot: slot,
-          status: newStatus
+          mentorIndex: mentorIndex,
+          slotIndex: slotIndex
         })
-      }).then(res => {
-        if (!res.ok) {
-          alert("Failed to update status.");
-        }
-      }).catch(() => {
-        alert("Server error while updating status.");
-      });
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (!data.success) {
+            console.error("Failed to update status");
+          }
+        });
     });
 
     slotRow.appendChild(label);
