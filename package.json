@@ -1,0 +1,24 @@
+{
+  "name": "team4-status-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed-Samirr/Team-4-session-status.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmed-Samirr/Team-4-session-status/issues"
+  },
+  "homepage": "https://github.com/Ahmed-Samirr/Team-4-session-status#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
