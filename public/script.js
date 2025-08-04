@@ -15,45 +15,46 @@ function createMentorCard(name, mentorIndex) {
   card.appendChild(title);
 
   sessionSlots.forEach((slot, slotIndex) => {
-    const slotRow = document.createElement("div");
-    slotRow.className = "slot";
+  const slotRow = document.createElement("div");
+  slotRow.className = "slot";
 
-    const label = document.createElement("div");
-    label.className = "slot-label";
-    label.innerText = slot;
+  const label = document.createElement("div");
+  label.className = "slot-label";
+  label.innerText = slot;
 
-    const button = document.createElement("button");
-    button.className = "toggle-button";
-    button.innerText = "Free";
+  const button = document.createElement("button");
+  button.className = "toggle-button";
+  button.innerText = "Free";
 
-    button.addEventListener("click", () => {
-      const isNowOccupied = button.classList.toggle("occupied");
-      const newStatus = isNowOccupied ? "Occupied" : "Free";
-      button.innerText = newStatus;
+  button.addEventListener("click", () => {
+    const isNowOccupied = button.classList.toggle("occupied");
+    const newStatus = isNowOccupied ? "Occupied" : "Free";
+    button.innerText = newStatus;
 
-      // ✅ نستخدم mentorIndex و slotIndex هنا بعد ما بقوا متعرفين
-      fetch("/toggle", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          mentorIndex: mentorIndex,
-          slotIndex: slotIndex
-        })
+    const mentorIndex = mentors.indexOf(name); // ⬅️ عرفنا الاندكس الصح
+    fetch("/toggle", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        mentorIndex: mentorIndex,
+        slotIndex: slotIndex
       })
-        .then(res => res.json())
-        .then(data => {
-          if (!data.success) {
-            console.error("Failed to update status");
-          }
-        });
-    });
-
-    slotRow.appendChild(label);
-    slotRow.appendChild(button);
-    card.appendChild(slotRow);
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success) {
+          console.error("Failed to update status");
+        }
+      });
   });
+
+  slotRow.appendChild(label);
+  slotRow.appendChild(button);
+  card.appendChild(slotRow);
+});
+
 
   return card;
 }
