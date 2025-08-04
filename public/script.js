@@ -1,3 +1,10 @@
+const mentors = [
+  "Shrouk Ghania", "Hager Hossam", "Sosana Emad", "Baraa Rabea", "Nesma Farid",
+  "Rewan Ramadan", "Ahmed Samir", "Abdallah Ahmed", "Rehab Mohamed", "Noha Abdelrheem"
+];
+
+const sessionSlots = ["3:00", "4:30", "6:00", "7:30", "9:00"];
+
 function createMentorCard(name, mentorIndex) {
   const card = document.createElement("div");
   card.className = "mentor-card";
@@ -50,3 +57,12 @@ function createMentorCard(name, mentorIndex) {
 
   return card;
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mentorsContainer = document.getElementById("mentors");
+  mentors.forEach((mentor) => {
+    const card = createMentorCard(mentor);
+    mentorsContainer.appendChild(card);
+  });
+});
