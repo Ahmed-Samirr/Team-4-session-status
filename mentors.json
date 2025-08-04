@@ -1,1 +1,42 @@
-{}
+[
+  {
+    "name": "Shrouk Ghania",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Hager Hossam",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Sosana Emad",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Baraa Rabea",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Nesma Farid",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Rewan Ramadan",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Ahmed Samir",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Abdallah Ahmed",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Rehab Mohamed",
+    "slots": ["free", "free", "free", "free", "free"]
+  },
+  {
+    "name": "Noha Abdelrheem",
+    "slots": ["free", "free", "free", "free", "free"]
+  }
+]
